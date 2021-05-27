@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+{% block content %}
+    <nav class="navbar navbar-light" style="background-color: #ffd1d2">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/">Home</a>
+    </div>
+    </nav>
+<br>
+    <form action="" method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+        <div class="container">
+            <div class="form-group">
+                <label for="exampleInputname" class="form-label">Enter Name</label>
+                <input class="form-control" type="text" id="exampleInputname" name="name" placeholder="Your Name"><br>
+            </div>
+     <div class="form-group">
+                <label for="exampleInputemail" class="form-label">Enter Email Address</label>
+                <input class="form-control" type="email" id="exampleInputemail" name="email" placeholder="Your Email"><br>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputquery" class="form-label">Enter Query/Message</label>
+                <input class="form-control" type="text" id="exampleInputquery" name="query" placeholder="Your Query/Complaint/Message"><br>
+            </div>
+     <input type="submit"><br>
+        </div>
+     </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>
